@@ -1,0 +1,15 @@
+#!/bin/bash
+#####Parse CSV file in shell script
+#Env Prod
+#Wrten by vitthalk58
+
+while IFS=',' read -r column1 column2; do
+ echo ":$column1  $column2"
+done < crick.csv
+############OutPut###########
+:Scoring Area   Runs
+:Midwicket  28
+:Cover  20
+:Longon   25
+:Longoff   9
+:Fineleg   11
