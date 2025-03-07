@@ -5,7 +5,7 @@
 
 while IFS=',' read -r column1 column2; do
  echo ":$column1  $column2"
-done < crick.csv
+done < crick.csv #filename 
 ############OutPut###########
 :Scoring Area   Runs
 :Midwicket  28
