@@ -13,3 +13,39 @@ done < crick.csv #filename
 :Longon   25
 :Longoff   9
 :Fineleg   11
+
+##### Scrpt for create new user #####
+
+!/bin/bash
+
+############################################################
+#Create a new user 
+###########################################################
+
+
+UNAME=$1
+
+if [ ! $UNAME ]; then
+  echo "Please pass argumnet its mandatttry "
+  exit
+fi
+
+RUNUSER=`/usr/bin/whoami`
+
+
+if [ "$RUNUSER" != 'root']; then
+  echo "You are creating new user you must have root user permition "
+  exit
+fi
+
+
+/usr/bin/id $UNAME
+
+if [ $? -eq 0 ]; then
+  echo "User is allready exited. Please enter differnat user name: Thanks "
+  exit
+fi
+
+/usr/sbin/useradd $UNAME
+echo "User $uname is added successfully "
+
